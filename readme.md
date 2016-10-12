@@ -7,18 +7,18 @@ The users can follow one another and view profile
 
 ##Technologies
 
-*HTML
-*CSS
-*Bootstrap
-*Compass/SASS
-*Python
-*Flask
-*Jinja
-*MySQL
+* HTML
+* CSS
+* Bootstrap
+* Compass/SASS
+* Python
+* Flask
+* Jinja
+* MySQL
 
 ##Local Installation Requirements
-pip install flask
-pip install flask-mysql
-pip install bcrypt
+`pip install flask`
+`pip install flask-mysql`
+`pip install bcrypt`
 
 ##URL to Live Demo

@@ -1,0 +1,56 @@
+{% extends 'layout.html' %} {% block body %}
+<div class="jumbotron">
+    <h1>Welcome {{session['username']}}</h1>
+    <p>What is on your mind today?</p>
+    <button data-target="#post-modal" data-toggle="modal" class="btn btn-primary btn-lg">Flip A Bird</button>
+</div>
+<form id="submit-post-form" action="post_submit" method="post" accept-charset="utf-8">
+    <div class="modal fade" id="post-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Create A Post</h4>
+                </div>
+                <div class="modal-body col-sm-12">
+                    <label>Message Body:</label>
+                    <textarea name="post_content" class="col-sm-8" rows="10"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="col-sm-12">
+    <div class="post-wrapper">
+        <table class="table">
+            <thead class="post-content">
+                <th class="post-user">johndoe<img src="static/images/johndoe.jpg" class="img-respnsive"><button class="btn btn-sm btn-success" type="submit">Follow</button></th>
+                <th class="post-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</th>
+                <th class="post-votes"><a href="/up-vote"><i class="icon ion-arrow-up-a"></i></a><hr/><a href="down-vote"><i class="icon ion-arrow-down-a"></i></a></th>
+            </thead>
+            <tbody>
+                <tr data-toggle="collapse" data-target="#accordion" class="clickable">
+                    <td>
+                        <ul class="nav nav-pills">
+                            <li>Comments &nbsp<span class="badge">3</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div id="accordion" class="collapse">
+                        	<li>Comments on Post</li>
+                        	<li>Some more comments on post</li>
+                        	<li>A bunch a trolling comments that don't mean anything</li>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
